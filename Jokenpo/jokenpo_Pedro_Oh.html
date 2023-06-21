@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JoKenPo</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 30px;
+            font-size: 80px;
+        }
+
+        button {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 60px;
+            color: rgb(65, 61, 61);
+            background-color: rgb(21, 233, 187);
+            margin: 20px;
+            padding: 20px;
+            border: none;
+            border-radius: 30px;
+        }
+
+        p {
+            font-size: 40px;
+        }
+
+        h2 {
+            font-size: 40px;
+        }
+
+        .placar {
+            display: flex;
+            padding: 30px;
+            width: 300px;
+            margin: auto;
+            background-color: rgb(207, 228, 24);
+            border-radius: 30px;
+        }
+
+        h3 {
+            font-size: 40px;
+        }
+
+        .x {
+            color: rgba(255, 255, 255, 0);
+        }
+
+        span {
+            color: rgb(76, 0, 255);
+        }
+
+        .partidas {
+            width: 200px;
+            margin: auto;
+            font-size: 30px;
+            font-weight: 100;
+        }
+        .obs {
+            font-size: 20px;
+            padding-top: 30px;
+        }
+
+    </style>
+  </head>
+  <body>
+
+    <h1>JoKenPo</h1>
+
+    <div id="iniciar">
+        <button class="iniciar" onclick="iniciar()">Iniciar Jogo</button>
+    </div>
+    
+    <div id="armas">
+    </div>
+
+    <h2>PLACAR</h2>
+    <h2 class="partidas">Partidas: <span id="partidas"> 0</span></h2>
+
+    <div class="placar">
+        <h3>(Você) <span id="placarUsuario">0</span></h3>
+        <h3 class="x"> ""  <span>x</span></h3>
+        <h3>(PC) <span id="placarScript">0</span></h3>
+    </div>
+    <p class="obs">(Você pode acompanhar as variáveis do jogo através do <strong>Console</strong>.)</p>
+    
+    
+    <script>
+
+       // Inicia a página com o botão Iniciar
+       //Cria os botões das Armas através do JS, ocultando o botão Iniciar
+        function iniciar() {
+            alert('Vence que ganhar 3 partidas!')
+            var iniciar = document.querySelector('div#iniciar')
+            var armas = document.querySelector('div#armas')
+            iniciar.innerHTML = `<p>Escolha a sua arma!</p>`
+            armas.innerHTML += `<button id="pedraBtn" onclick="pedraFunc()">✊🏼</button>`
+            armas.innerHTML += `<button id="papelBtn" onclick="papelFunc()">🖐🏼</button>`
+            armas.innerHTML += `<button id="tesouraBtn" onclick="tesouraFunc()">✌🏼</button>`
+        }
+
+        // Variáveis Globais
+        var jogadaUsuario = document.getElementById('pedraBtn')
+        var jogadaUsuario = document.getElementById('papelBtn')
+        var jogadaUsuario = document.getElementById('tesouraBtn')
+        var jogadaUsuarioConvertida = ""
+        var placarUsuario = document.getElementById('placarUsuario')
+        var placarScript = document.getElementById('placarScript')
+        var partidas = document.getElementById('partidas')
+        var partida = 0
+        var vitoriaUsuario = 0
+        var vitoriaScript = 0
+
+        //Função que converte a jogada do usuário para número e executa o jogo
+        function pedraFunc() {
+            jogadaUsuarioConvertida = 1
+            jogar()
+        }
+        function papelFunc() {
+            jogadaUsuarioConvertida = 2
+            jogar()
+        }
+        function tesouraFunc() {
+            jogadaUsuarioConvertida = 3
+            jogar()
+        }
+
+        // Função do jogo
+        function jogar() {
+            var jogadaScript = Math.floor(Math.random() * 3) + 1
+      
+        // Converte o número da jogada do usuário em emoji e mostra no Alert
+        if (jogadaUsuarioConvertida === 1) {
+            var u1 = '✊🏼'
+        }
+        if (jogadaUsuarioConvertida === 2) {
+            var u2 = '🖐🏼'
+        }
+        if (jogadaUsuarioConvertida === 3) {
+            var u3 = '✌🏼'
+        }
+
+        // Converte o número da jogada do script em emoji e mostra no Alert
+        if (jogadaScript === 1) {
+            var s1 = '✊🏼'
+        }
+        if (jogadaScript === 2) {
+            var s2 = '🖐🏼'
+        }
+        if (jogadaScript === 3) {
+            var s3 = '✌🏼'
+        }        
+        
+        // Resultado da jogada // Empate
+        if (jogadaUsuarioConvertida === jogadaScript && jogadaUsuarioConvertida === 1 && jogadaScript === 1) {
+            alert(`Deu pra ninguém!\nEmpatou!\n\n (Você) ${u1} X ${s1} (PC)`)
+            partida++;
+        }
+        if (jogadaUsuarioConvertida === jogadaScript && jogadaUsuarioConvertida === 2 && jogadaScript === 2) {
+            alert(`Deu pra ninguém!\nEmpatou!\n\n (Você) ${u2} X ${s2} (PC)`)
+            partida++;
+        }            
+        if (jogadaUsuarioConvertida === jogadaScript && jogadaUsuarioConvertida === 3 && jogadaScript === 3) {
+            alert(`Deu pra ninguém!\nEmpatou!\n\n (Você) ${u3} X ${s3} (PC)`)
+            partida++;
+        }
+
+        // Resultado da jogada // Usuário Perde
+        if (jogadaUsuarioConvertida === 1 && jogadaScript === 2) {
+            alert(`Perdeu MANÉ!\n\n (Você) ${u1} X ${s2} (PC)`)
+            partida++;
+            vitoriaScript++;
+        }
+        if (jogadaUsuarioConvertida === 2 && jogadaScript === 3) {
+            alert(`Perdeu MANÉ!\n\n (Você) ${u2} X ${s3} (PC)`)
+            partida++;
+            vitoriaScript++;
+        }
+        if (jogadaUsuarioConvertida === 3 && jogadaScript === 1) {
+            alert(`Perdeu MANÉ!\n\n (Você) ${u3} X ${s1} (PC)`)
+            partida++;
+            vitoriaScript++;
+        }
+
+        // Resultado da jogada // Usuário Ganha
+        if (jogadaUsuarioConvertida === 1 && jogadaScript === 3) {
+            alert(`PARABÉNS!\nVocê Ganhou!\n\n (Você) ${u1} X ${s3} (PC)`)
+            partida++;
+            vitoriaUsuario++;
+        }
+        if (jogadaUsuarioConvertida === 2 && jogadaScript === 1) {
+            alert(`PARABÉNS!\nVocê Ganhou!\n\n (Você) ${u2} X ${s1} (PC)`)
+            partida++;
+            vitoriaUsuario++;
+        }
+        if (jogadaUsuarioConvertida === 3 && jogadaScript === 2) {
+            alert(`PARABÉNS!\nVocê Ganhou!\n\n (Você) ${u3} X ${s2} (PC)`)
+            partida++;
+            vitoriaUsuario++;
+        }
+
+        // Condicional para finalizar o jogo após a vitória de 3 partidas
+        if (vitoriaUsuario === 3) {
+            setTimeout(() => { // Tempo de delay para que o resultado do placar apareça na tela antes de finalizar o jogo
+                alert('PARABÉNS! VOCÊ VENCEU 3 VEZES!')
+                alert('Este PC tá Zuado, por isso você ganhou!')
+                window.location.reload();
+        }, "2 second");
+        } else if (vitoriaScript === 3){
+            setTimeout(() => { // Tempo de delay para que o resultado do placar apareça na tela antes de finalizar o jogo
+                alert('INFELIZMENTE VOCÊ PERDEU!')
+                alert('Treina um pouquinho mais e volta aqui! kkkk!')
+                window.location.reload();
+        }, "2 second");
+        }
+
+        // Mostra o placar no HTML
+        placarUsuario.innerHTML = vitoriaUsuario;
+        placarScript.innerHTML = vitoriaScript;
+        partidas.innerHTML = partida;
+
+        // Mostra no console os resultados
+        console.log('Jogada usuario: ' + jogadaUsuarioConvertida)
+        console.log('Jogada script: ' + jogadaScript)
+        console.log('Vitórias usuário: ' + vitoriaUsuario)
+        console.log('Vitórias script: ' + vitoriaScript)
+        console.log('Partidas: ' + partida)
+    }
+
+    </script>
+
+  </body>
+</html>

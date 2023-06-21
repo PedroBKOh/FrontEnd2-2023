@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+    <title>Gerador de Cards</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+        DH | FrontEnd II - CheckPoint 1
+        </div>
+    </header>
+    <main id="main" class="main">
+        <div id="mainDiv" class="main-div">
+            <form class="formulario">
+                <h1>Business Card</h1>
+                <div>
+                    <input type="text" id="inputEmpresa" class="form-input" placeholder="Nome da Empresa" required maxlength="20">
+                </div>
+                <div>
+                    <input type="text" id="inputNome" class="form-input" placeholder="Nome e Sobrenome" required maxlength="20">
+                </div>
+                <div>
+                    <input type="text" id="inputCargo" class="form-input" placeholder="Cargo ou Função" required maxlength="20">
+                </div>
+                <div>
+                    <input type="text" id="inputTelefone" class="form-input" placeholder="Telefone (11 2222-2222)" required maxlength="17" minlength="12">
+                </div>
+                <div>
+                    <input type="text" id="inputWhatsapp" class="form-input" placeholder="Whatsapp (11 99999-9999)" required maxlength="17" minlength="13">
+                </div>
+                <div>
+                    <input type="text" id="inputEmail" class="form-input" placeholder="E-mail" required maxlength="20">
+                </div>
+                <div>
+                    <input type="text" id="inputEndereco" class="form-input" placeholder="Endereço Completo" required maxlength="55">
+                </div>
+                <div>
+                    <input type="url" id="inputImagem" class="form-input" placeholder="URL da Logomarca" required>
+                </div>
+
+            <button type="submit" id="btnVisualizar" class="bt-visualizar">Visualizar</button>
+            <button type="button" id="btnLimpar" class="btn-limpar">Limpar Tudo</button>
+            </form>
+        </div >
+    </main>
+    <section id="divCard" class="div-card">
+    </section>
+    <footer>
+        <p>Pedro Oh | Entrega: 06 de Junho de 2023.</p>
+    </footer>
+</body>
+</html>

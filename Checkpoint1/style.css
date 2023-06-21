@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400&family=Noto+Sans:wght@100;300&family=Roboto:wght@1,300&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+sbody {
+    background-image: url(img/1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body {
+    background-color: #212529;
+}
+
+header {
+    background-color: #150797;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 20px;
+}
+
+.logo {
+    font-size: 35px;
+    font-weight: bold;
+    margin: auto;
+}
+
+.main {
+    width: 400px;
+    height: 700px;
+    margin: auto;
+    box-shadow: 0 0 25px black;
+    background-color: rgb(219, 216, 216);
+    border-radius: 10px;
+    padding: 50px;
+  }
+
+  .main-div {
+    
+  }
+
+  .div-card {
+  }
+
+.card {
+    margin: auto;
+    margin-top: 10px;
+    width: 500px;
+    height: 300px;
+    box-shadow: 0 0 25px black;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+  }
+
+  .card-new {
+    padding-top: 30px;
+  }
+  
+  .card-empresa {
+    text-align: right;
+    margin-right: 30px;
+    font-size: 2.5rem;
+  }
+
+  .card-nome {
+    margin-top: -30px;
+    text-align: right;
+    margin-right: 30px;
+    font-size: 1.5rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+  .card-cargo {
+    text-align: right;
+    margin-right: 30px;
+    font-size: 1rem;
+  }
+
+  .card-zap {
+    text-align: right;
+    margin-right: 30px;
+    font-size: 1rem;
+    font-family: Verdana, sans-serif;
+  }
+
+  .card-email {
+    text-align: right;
+    margin-right: 30px;
+    font-size: 1rem;
+    font-family: ;
+  }
+
+  .card-tel {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 900;
+    color: #4506b9;
+    margin-top: 10px;
+  }
+
+  .card-end {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1.3rem;
+  }
+
+  .card-imagem {
+    width: 100px;
+    height: 100px;
+    margin-top: -50px;
+    margin-left: 30px;
+  }
+  
+
+h1 {
+    margin-bottom: 30px;
+    font-family: 'Noto Sans', sans-serif;
+    color: #4506b9;
+}
+
+.formulario {
+    display: inline-block;
+    background: #f3f5f5b5;
+    margin: auto;
+    padding: 25px;
+    text-align: center;
+    border-radius: 15px;
+}
+  
+.form-input {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border-color: rgb(206, 212, 218, 1);
+    border: 1px solid #ced4da;
+    border-radius: 0.375rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    margin-bottom: 15px;
+    border-width: 2px;
+    outline: none;
+}
+
+.input-imagem {
+    padding: 30px;
+    background-color: #7975752c;
+    border-radius: 0.375rem;
+}
+
+/* ------------------------------------ A ----------------------------------- */
+input:not(:placeholder-shown) {
+    border-color: #1b72e2;
+    border-width: 3px;
+}
+
+input:placeholder-shown {
+    border-color: rgb(163, 153, 153);
+}
+/* https://andreluiz.medium.com/css-como-mudar-a-cor-de-um-input-caso-esteja-preenchido-fdc32cf83f20 */
+
+form button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #1b72e2;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+  
+form button:hover {
+    background: rgb(42, 10, 184);
+}
+
+.btn-limpar {
+    background: rgb(255, 0, 0);
+}
+
+.btn-limpar:hover {
+    background: rgb(0, 0, 0);
+}
+  
+footer {
+    height: 50px;
+    background-color: rgb(15, 4, 110);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 20px;
+}
+
+footer p {
+    text-align: center;
+}
+
+.cardFile{
+    background: #aab2bbaf;
+    display: inline-block;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 45px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #3d3e3f;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-cadastrar:hover{
+    background: rgb(44, 8, 172);
+}
+
+.btn-cancelar:hover{
+    background: rgb(255, 0, 0);
+}
+
+@media (max-width: 1100px) {
+    .card {
+      flex-direction: column;
+    }
+}
+  
+@media (max-width: 768px) {
+    header {
+      flex-direction: column;
+    }
+}
